@@ -1,0 +1,128 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: 'Vollkorn', serif;
+}
+
+.container{
+    height: 750px ;
+    background-image: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)),
+    url("./pictures/background.jpg");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.scanner{
+    height: 500px;
+    width: 500px;
+    top: 50%;
+    left: 50%;
+    position: absolute;
+    transform: translate(-50%,-45%);
+    border:1px solid rgb(124, 124, 124);
+    padding: 10px;
+    background-color: rgb(194, 192, 192);
+    border-radius: 5px;
+    opacity: 0.9;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.6), 0 6px 20px 0 rgba(0, 0, 0, 0.6);
+
+}
+
+.scanner h1{
+    margin-top: 50px;
+    text-align: center;
+    margin-bottom: 10px;
+}
+
+.scanner input{
+    height: 30px;
+    width: 230px;
+    border-radius: 3px;
+    border:none;
+    border-bottom: 1px solid rgb(156, 156, 156);
+    margin-top: 20px;
+    padding: 5px;
+    margin-left: 5px;
+}
+
+.scanner label{
+    font-size: 20px;
+}
+
+
+
+#btn{
+    height: 35px;
+    width: 150px;
+    border-radius: 5px;
+    border:none;
+    background-color: rgb(59, 59, 59);
+    margin-top: 30px;
+    color: white;
+    margin-left: 150px;
+    font-size: 16px;
+    letter-spacing: 1px;
+
+}
+
+#btn:hover{
+    cursor: pointer;
+    transition: 0.3s;
+    background-color: rgb(88, 88, 88);
+    color: rgb(219, 69, 69);
+}
+
+
+.avatar{
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    position: absolute;
+    top: -59px;
+    left: calc(47% - 50px);
+}
+
+#result{
+    height: 200px;
+    width: 340px;
+    margin-top: 30px;
+    margin-left:60px;
+    padding: 10px;
+
+}
+
+#warning{
+    margin-left:120px;
+    margin-top: 20px;
+}
+
+#succeeded{
+    margin-left:120px;
+    margin-top: 20px;
+}
+
+.error{
+    padding: 10px;
+    margin-bottom: 5px;
+    font-size: 17px;
+}
+.red{
+    display: block;
+    color: red;
+    font-size: 20px;
+}
+.green{
+    margin-left: 70px;
+    display: block;
+    color: green;
+    font-size: 20px;
+}
+
+#loading-icon{
+    height: 200px;
+    width: 300px;
+    margin-left: 10px;
+    display: none;
+}

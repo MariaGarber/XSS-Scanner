@@ -1,28 +1,39 @@
 # XSS Scanner
 
-Following OWASP TOP 10 (the top ten most critical web application security risk) I decided to build an XSS Scanner.
-In the Frontend I used vanilla javascript and in the Backend I used NodeJS and Express for the server and Puppeteer for automation. 
-Puppeteer is an open source library developed by Google that was built in purpose of automating and simplifying tests and development.
+Cross-Site Scripting (XSS) is one of the most well known web application vulnerabilities. It even has a dedicated chapter in the OWASP Top 10 project and it is a highly chased vulnerability in bug bounty programs.
 
-The scanner getting link from the user and scan the website for XSS vulnerability by injecting malicious script and check if the website is running the script.
-The scanner is trying to inject variety of scripts for better results.   
+The scanner gets a link from the user and scan the website for XSS vulnerability by injecting malicious scripts at the input place. The injection is done by Puppeteer automation using Chromium 
 
+It works in two steps:
+1. Find the target: In this first step, the tool tries to identify all the places at the page including injectable parameters in forms, URLs, headers, etc.
+2. Test for XSS: For each place discovered in the previous step, the scanner will try to detect if the parameters are vulnerable to Cross-Site Scripting. If the tool detects at least one vulnerability, it will return that the website have XSS vulnerability .
 
-### Prerequisites
+XSS detection is performed with a couple of requests. First, the scanner injects a simple string in the tested parameter and checks if it is reflected back in the response page. If the parameter is reflected, then the scanner will inject a piece of JavaScript code, including some special HTML characters (>, <, ", ') and it will try to see if they are returned in the response page without sanitization. If this is true, the page and parameter are declared vulnerable.
 
-For able to be run the scanner you need to have NodeJS installed on your computer and the browser need to include Cors extension
-If both of these things are installed, all you have to do in the terminal is:
+### Technologies
+ * Puppeteer
+ * Javascript
+ * NodeJS
+ * Express
+ 
+ ![](public/pictures/xss_scanner.png)
+ 
+### How to install
 
+Clone the repository:
+```
+git clone https://github.com/MariaGarber/XSS-Scanner.git
+```
+Enter the clonned folder:
+```
+cd XSS-Scanner
+```
+Install the Live Server:
 ```
 npm install
 ```
-and after that just for run the server you need:
-
+Run the application:
 ```
 npm start
 ```
-
-![](pictures/xss_scanner_pic.png)
-
-
-
+Open the browser at http://localhost:4000/

@@ -27,7 +27,7 @@ Enter the clonned folder:
 ```
 cd XSS-Scanner
 ```
-Install the Live Server:
+Install the dependencies:
 ```
 npm install
 ```
